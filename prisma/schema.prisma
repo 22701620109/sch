@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model users {
+  id                String             @id @default(cuid())
+  username          String
+  name              String
+  status            Status             @default(NORMAL)
+  // 身份证
+  idNumber          String
+  phoneNumber       String
+  email             String             @unique
+  password          String
+  internetDetails   internetDetail[]
+  billingStatements billingStatement[]
+  log               log[]
+}
+
+model internetDetail {
+  id             String   @id @default(cuid())
+  signInTime     DateTime @default(now())
+  signOutTime    DateTime @default(now())
+  macAddress     String
+  ipAddress      String
+  currentTraffic Int      @default(0)
+  duration       Int      @default(0)
+  userId         String
+  users          users    @relation(fields: [userId], references: [id])
+}
+
+model billingStatement {
+  id              String   @id @default(cuid())
+  product         String
+  totalTraffic    Float
+  totalOnlineTime Int
+  billingTime     DateTime
+  userId          String
+  users           users    @relation(fields: [userId], references: [id])
+}
+
+model log {
+  id           String   @id @default(cuid())
+  ipAddress    String
+  macAddress   String
+  errorMessage String
+  recordTime   DateTime @default(now())
+  users        users?   @relation(fields: [usersId], references: [id])
+  usersId      String?
+}
+
+enum Status {
+  NORMAL
+  ABNORMAL
+}

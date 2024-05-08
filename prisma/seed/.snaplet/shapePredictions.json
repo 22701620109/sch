@@ -1,0 +1,154 @@
+[
+  {
+    "schemaName": "public",
+    "tableName": "billingStatement",
+    "predictions": [
+      {
+        "input": "public billing_statement id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9980881810188293,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public billing_statement product",
+        "column": "product",
+        "shape": "COMMERCE_PRODUCT",
+        "confidence": 0.892592191696167,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "internetDetail",
+    "predictions": [
+      {
+        "input": "public internet_detail id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9979191422462463,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public internet_detail ip_address",
+        "column": "ipAddress",
+        "shape": "INTERNET_IPV4",
+        "confidence": 0.998254120349884,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public internet_detail mac_address",
+        "column": "macAddress",
+        "shape": "MAC_ADDRESS",
+        "confidence": 0.9929783940315247,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "log",
+    "predictions": [
+      {
+        "input": "public log error_message",
+        "column": "errorMessage",
+        "shape": "GIT_COMMIT_MESSAGE",
+        "confidence": 0.687035322189331,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public log id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.993883490562439,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public log ip_address",
+        "column": "ipAddress",
+        "shape": "INTERNET_IPV4",
+        "confidence": 0.9985193610191345,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public log mac_address",
+        "column": "macAddress",
+        "shape": "MAC_ADDRESS",
+        "confidence": 0.9947227239608765,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "users",
+    "predictions": [
+      {
+        "input": "public users email",
+        "column": "email",
+        "shape": "EMAIL",
+        "confidence": 0.9942367076873779,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public users id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9862675666809082,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public users id_number",
+        "column": "idNumber",
+        "shape": "UUID",
+        "confidence": 0.9885878562927246,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public users name",
+        "column": "name",
+        "shape": "USERNAME",
+        "confidence": 0.8959667682647705,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public users password",
+        "column": "password",
+        "shape": "PASSWORD",
+        "confidence": 0.9364579916000366,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public users phone_number",
+        "column": "phoneNumber",
+        "shape": "PHONE_NUMBER",
+        "confidence": 0.9904338121414185,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public users username",
+        "column": "username",
+        "shape": "USERNAME",
+        "confidence": 0.9721010327339172,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  }
+]

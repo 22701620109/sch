@@ -1,0 +1,23 @@
+# Ignore all autogenertated files
+**/*.css.d.ts
+**/*.scss.d.ts
+
+# Ignore artifacts:
+.next
+dist
+out
+coverage
+/node_modules/
+
+# Ignore all HTML files:
+*.html
+
+# Ignore config files:
+
+# pnpm
+/pnpm-lock.yaml
+
+# Ignore deep json files, they could be lottie image data
+#*.json
+#!/*.json
+#!package.json
